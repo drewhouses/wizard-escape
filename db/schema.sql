@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS maloch_db;
+CREATE DATABASE maloch_db;
