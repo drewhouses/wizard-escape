@@ -44,14 +44,20 @@ footer {
 
 #avatar-picker-container {
   height: 500px;
-  width: 70vw;
+  width: 1001px;
   border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-#avatar-picker-container img {
+.room-image {
+  width: 100vw;
+}
+
+.room-image img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #start-container {
@@ -65,4 +71,13 @@ footer {
 .start-game-form {
   margin-top: 10px;
   text-align: center;
+}
+
+.game-text {
+  text-align: center;
+}
+
+.player-choices-form {
+  display: flex;
+  justify-content: space-evenly;
 }
