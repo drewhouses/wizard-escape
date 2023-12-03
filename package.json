@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start": "node server.js"
+    "start": "node server.js",
+    "init_db": "mysql -u root -p"
   },
   "author": "Evan Rice, Luis Olmos, Drew Casas",
   "license": "ISC",
