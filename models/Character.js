@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Items extends Model {}
+class Character extends Model {}
 
-Items.init(
+Character.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,23 +15,20 @@ Items.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    current_room: {
       type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "dungeon",
     },
-    is_consumable: {
-      // is_consumable will determine whether the item gets destroyed upon use
-      // default value is true since most items will be 1 time use
-      type: DataTypes.BOOLEAN,
-      defaultValue: true,
-    },
+    // What other columns should a Character have????
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "items",
+    modelName: "character",
   }
 );
 
-module.exports = Items;
+module.exports = Character;
