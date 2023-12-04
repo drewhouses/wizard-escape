@@ -1,0 +1,83 @@
+.no-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #1b89bc;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.no-button:hover {
+  color: #065b83;
+  text-decoration: underline;
+}
+
+main {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+/* header {
+  position: relative;
+  float: left;
+  width: 200px;
+  height: 100vh;
+  background-color: #44f;
+}
+
+footer {
+  position: relative;
+  float: right;
+  width: 200px;
+  height: 100vh;
+  background-color: #44f;
+} */
+
+.login-form {
+  width: 400px;
+}
+
+.signup-form {
+  width: 400px;
+}
+
+#avatar-picker-container {
+  height: 500px;
+  width: 1001px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.room-image {
+  width: 100vw;
+}
+
+.room-image img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#start-container {
+  display: block;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+}
+
+.start-game-form {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.game-text {
+  text-align: center;
+}
+
+.player-choices-form {
+  display: flex;
+  justify-content: space-evenly;
+}
