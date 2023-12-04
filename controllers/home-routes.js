@@ -9,7 +9,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 router.get("/start", (req, res) => {
   res.render("start", {
     logged_in: req.session.logged_in,
