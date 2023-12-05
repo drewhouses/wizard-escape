@@ -12,11 +12,28 @@
   color: #065b83;
   text-decoration: underline;
 }
+/* this takes away the disc for the radio form */
+input[type="radio"] {
+  -webkit-appearance: none;
+}
 
-main {
+input[type="radio"]:hover + img {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+input[type="radio"]:checked + img {
+  outline: 5px solid black;
+}
+
+body {
+  background-color: purple;
+}
+
+/* main {
   margin-left: 250px;
   margin-right: 250px;
-}
+} */
 
 /* header {
   position: relative;
@@ -34,22 +51,22 @@ footer {
   background-color: #44f;
 } */
 
-.login-form {
+/* .login-form {
   width: 400px;
 }
 
 .signup-form {
   width: 400px;
-}
+} */
 
-#avatar-picker-container {
+/* #avatar-picker-container {
   height: 500px;
   width: 1001px;
   border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
+} */
 
 .room-image {
   width: 100vw;
