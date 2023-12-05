@@ -18,7 +18,6 @@ Player.init(
     avatar: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 1,
     },
     current_room: {
       type: DataTypes.STRING,

@@ -12,7 +12,7 @@ const createCharacterHandler = async (event) => {
   if (name && avatar) {
     const response = await fetch("/api/player/", {
       method: "POST",
-      body: JSON.stringify({ name }),
+      body: JSON.stringify({ name, avatar }),
       headers: { "Content-Type": "application/json" },
     });
 
