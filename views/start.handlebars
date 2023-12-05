@@ -1,18 +1,76 @@
-<h2>This is my game start page</h2>
-
-<div id="avatar-picker-container">
-  <img src="https://placehold.co/150x150" alt="" id="avatar-1" class="avatar" />
-  <img src="https://placehold.co/150x150" alt="" id="avatar-2" class="avatar" />
-  <img src="https://placehold.co/150x150" alt="" id="avatar-3" class="avatar" />
-  <img src="https://placehold.co/150x150" alt="" id="avatar-4" class="avatar" />
-  <img src="https://placehold.co/150x150" alt="" id="avatar-5" class="avatar" />
-</div>
-
-<div id="start-container">
-  <form class="start-game-form">
-    <button id="start-game-btn">Start Game</button>
-    <input id="character-name-field" type="text" value="The Stranger" />
-  </form>
+<div class="row d-flex justify-content-center">
+  <div id="avatar-picker-container" class="col-10 card p-3">
+    <form class="start-game-form">
+      <h2 class="mb-5">Create Your Character</h2>
+      <div class="row d-flex justify-content-evenly mb-5">
+        <label class="col-1">
+          <input type="radio" class="avatar" value="avatar-1" name="avatar" />
+          <img
+            src="/images/avatars/avatar-1.png"
+            alt="avatar-portrait"
+            height="150"
+            width="150"
+          />
+        </label>
+        <label class="col-1">
+          <input type="radio" class="avatar" value="avatar-2" name="avatar" />
+          <img
+            src="/images/avatars/avatar-2.png"
+            alt="avatar-portrait"
+            height="150"
+            width="150"
+          />
+        </label>
+        <label class="col-1">
+          <input type="radio" class="avatar" value="avatar-3" name="avatar" />
+          <img
+            src="/images/avatars/avatar-3.png"
+            alt="avatar-portrait"
+            height="150"
+            width="150"
+          />
+        </label>
+      </div>
+      <div class="row d-flex justify-content-evenly mb-5">
+        <label class="col-1">
+          <input type="radio" class="avatar" value="avatar-4" name="avatar" />
+          <img
+            src="/images/avatars/avatar-4.png"
+            alt="avatar-portrait"
+            height="150"
+            width="150"
+          />
+        </label>
+        <label class="col-1">
+          <input type="radio" class="avatar" value="avatar-5" name="avatar" />
+          <img
+            src="/images/avatars/avatar-5.png"
+            alt="avatar-portrait"
+            height="150"
+            width="150"
+          />
+        </label>
+      </div>
+      <div class="row d-flex justify-content-center mb-5">
+        <label class="col-3">
+          <label class="form-label">
+            Name:
+          </label>
+          <input
+            class="form-control"
+            id="character-name-field"
+            type="text"
+            value="The Stranger"
+          />
+        </label>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-1">
+          <button class="btn btn-success" id="start-game-btn">START</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 <script src="/js/create-character.js"></script>
