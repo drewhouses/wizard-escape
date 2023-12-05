@@ -6,8 +6,8 @@ inv.give(new ItemPile("key"));
 inv.give(new ItemPile("fireScroll"));
 inv.give(new ItemPile("hammer"));
 inv.give(new ItemPile("potion"));
-//inv.give(new ItemPile("key", 0));
-//inv.give(new ItemPile("key", 0));
+inv.give(new ItemPile("uniqueKey"));
+//inv.give(new ItemPile("key"));
 
 //var fireScroll = new ItemPile("fireScroll");
 //inv.give(fireScroll);
