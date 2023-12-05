@@ -8,6 +8,7 @@ const createCharacterHandler = async (event) => {
   console.log(name);
   console.log(avatar);
 
+  // need to post avatar :PP
   if (name && avatar) {
     const response = await fetch("/api/player/", {
       method: "POST",
