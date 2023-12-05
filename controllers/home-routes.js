@@ -15,7 +15,7 @@ router.get("/start", (req, res) => {
 });
 
 router.get("/game", (req, res) => {
-  res.render("room", {
+  res.render("intro", {
     logged_in: req.session.logged_in,
   });
 });
