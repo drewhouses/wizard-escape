@@ -16,7 +16,7 @@ const createCharacterHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/room"); //change to intro
+      document.location.replace("/game");
       console.log("Character created");
     } else {
       alert(response.statusText);
