@@ -28,12 +28,4 @@ router.get("/game/dungeon", (req, res) => {
   });
 });
 
-// router.get("/game/dungeon/:id", async (req, res) => {
-//   const playerData = await Player.findByPk(req.params.id);
-//   const playerInfo = playerData.get({ plain: true });
-//   res.render("room", {
-//     logged_in: req.session.logged_in,
-//   });
-// });
-
 module.exports = router;
