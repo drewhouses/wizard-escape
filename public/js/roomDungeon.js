@@ -35,7 +35,9 @@ const choice1 = async (event) => {
   //choice 1 of table
   if (position == desk) {
     //give hammer
-
+    if (hashammer) {
+      nar.textContent = "You picked up the hammer.";
+    }
     hashammer = true;
   }
   //choice 1 of door
@@ -44,23 +46,27 @@ const choice1 = async (event) => {
       nar.textContent = "The door is locked.";
     }
     if (haskey) {
-      document.location.replace("/");
+      document.location.replace("/game/library");
     }
   }
   //choice 1 of chest
   if (position == chest) {
-    if ((hashammer = false && !isOpen)) {
+    if (!hashammer && !isOpen) {
       nar.textContent = "The chest is locked.";
     }
     if (hashammer && !isOpen) {
+      ChText1.textContent = "Look at the stack of paper";
+      ChText2.textContent = "Grab the key";
+      ChText2.classList.remove("d-none");
+      isOpen = true;
       nar.textContent =
         "You grasp the hammer tightly and repeatedly smash the chain around the chest, until it yields. Succumbing to the relentless assault. It falls away clattering on the stone floor. Upon opening the chest it contains a mess of written pages and scrawled notes.";
     }
     if (isOpen == true) {
-      nar.textContent = `Skimming through the lines on the various pages, you are unable to find anything of value.
+      if (readPaper) {
+        nar.textContent = `Skimming through the lines on the various pages, you are unable to find anything of value.
 However, a single torn sheet of parchment catches your eye. It reads: "He who wishes to be free must find the magic keys three".`;
-      ChText1.textContent = "Grab the key";
-      ChText2.classList.remove("d-none");
+      }
       readPaper = true;
     }
   }
@@ -83,10 +89,9 @@ const choice2 = async (event) => {
   if (position == door) {
   }
   if (position == chest) {
-    if (isOpen == true && readPaper) {
-      //give key
-      haskey = true;
-    }
+    //give key
+    haskey = true;
+    nar.textContent = "You grabed the key.";
   }
 };
 
@@ -94,17 +99,21 @@ const choice3 = async (event) => {
   //loading chest
   event.preventDefault();
   if (position == neutral) {
-    if ((hashammer = false && !isOpen)) {
+    if (!hashammer && !isOpen) {
       ChText1.textContent = "Open chest";
       ChText1.classList.remove("d-none");
       nar.textContent =
         "You walk up to the chest which looks old and rusted. It is chained shut with a small lock on it.";
     }
     if (hashammer && !isOpen) {
+      nar.textContent =
+        "You walk up to the chest which looks old and rusted. It is chained shut with a small lock on it.";
       ChText1.textContent = "Open chest with the hammer";
       ChText1.classList.remove("d-none");
     }
     if (isOpen == true) {
+      nar.textContent =
+        "You walk up to the chest which looks old and rusted. It is chained shut with a small lock on it.";
       ChText1.textContent = "Look through stack of papers";
       ChText1.classList.remove("d-none");
     }
