@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
 
 .no-button {
   background: none;
@@ -29,7 +29,7 @@ input[type="radio"]:checked + img {
 }
 
 body {
-  background-image: url("/images/art/bg.png");
+  /* background-image: url("/images/art/bg.png"); */
   background-color: purple;
 }
 
@@ -39,6 +39,19 @@ body {
 
 .typed-cursor {
   display: none;
+}
+
+.inventory,
+.history {
+  height: 80vh;
+}
+
+#title {
+  font-family: "Creepster", sans-serif;
+}
+
+header {
+  background-color: rgb(87, 1, 87);
 }
 
 /* #nar,
