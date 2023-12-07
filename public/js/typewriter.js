@@ -5,9 +5,9 @@ const intro = new Typed("#intro-text", {
   typeSpeed: 20,
 });
 
-// const start = new Typed("#nar", {
-//   strings: [
-//     "You wake up in a dark room shackled to the wall. As you begin to look around your shackles vanish from your wrist. As your eyes begin to adjust to the dark room you stand up and realize you are in some kind of dungeon with cages and shackles along the opposite wall. There is a wooden table in front of you and is a couple feet away from you. You look to your right to see a chest that has a lock on it. You look to your left to see a door that could be an exit.",
-//   ],
-//   typeSpeed: 25,
-// });
+const ending = new Typed("#ending-text", {
+  strings: [
+    "With a heart pounding in your chest, you push the heavy, metal door open. It groans open reluctantly, revealing a moonlit night outside. The chilling wind carries a distant howl, and rustling leaves seem to whisper to you unintelligible speech. You glance nervously over yoru shoulder and see a dark wizard materialize behind you. The door creaks closed, sealing off his wickedness. Without looking back, you print forward through an uneven path that descends from teh tower's entrance. The sound of your hurried footsteps echo against the stone, creating a haunting rhythm that underscores the urgency of your escape. The wizard's tower, now a silhouette against the night sky, seems to release tendrils of dark energy that linger in the air. The distant wails of nocturnal creatures add to the eerie symphony, heightening the tension of your escape. As you pass through this clearing you enter, your sprint slows to a hastened walk. You stop only briefly and turn to see the tower. It seems oddly quaint and peaceful from the outside. As you turn around to continue your journey your heart suddenly drops are you are met face to face with the dark wizard. Before you can act, he reaches out and grabs ahold of your neck. Squeezing tighter and tighte, your struggle to breathe worsens. As you slip out of conciousness, you hear him say 'No one escapes Maloch.......'",
+  ],
+  typeSpeed: 20,
+});
