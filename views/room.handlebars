@@ -1,4 +1,82 @@
-<div class="room-image">
+<div class="row d-flex justify-content-between">
+  <div class="col-md-2 card history">
+    <h2 class="text-center d-none d-sm-block">History</h2>
+  </div>
+  <div class="col-md-6 d-flex flex-column align-items-center screen">
+    <img class="game-screen mb-3" src="https://placeholder.co/700x500" />
+    <p id="nar" class="card w-100">
+      You wake up in a dark room shackled to the wall. As you begin to look around your shackles vanish from your wrist. As
+  your eyes begin to adjust to the dark room you stand up and realize you are in some kind of dungeon with cages and
+  shackles along the opposite wall. There is a wooden table in front of you and is a couple feet away from you. You look
+  to your right to see a chest that has a lock on it. You look to your left to see a door that could be an exit.
+    </p>
+    <div class="col-12">
+      <form class="player-choices-form text-center">
+        <button
+          class="btn btn-success choice-btn mb-1"
+          id="choice1"
+        >Go to the table.</button>
+        <button
+          class="btn btn-success choice-btn mb-1"
+          id="choice2"
+        >Go to the door.</button>
+        <button
+          class="btn btn-success choice-btn mb-1"
+          id="choice3"
+        >Go to the chest.</button>
+        <button
+          class="btn btn-success choice-btn mb-1"
+          id="choice4"
+        >Choice</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-2 d-none d-sm-block text-center card inventory">
+    <h2>{{name}}</h2>
+    <img width="150" height="150" src="/images/avatars/avatar-{{avatar}}.png" />
+    <div class="col">
+      <h2 class="text-center">Inventory</h2>
+      <div class="col d-flex flex-wrap justify-content-around">
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+      </div>
+    </div>
+  </div>
+{{!-- <div class="room-image">
   <img src="https://placehold.co/1000x500" alt="" class="room-image" />
 </div>
 
@@ -16,7 +94,7 @@
     <button id="choice3" class="choice-btn">Go to the chest</button>
     <button id="choice4" class="d-none choice-btn">Choice</button>
   </form>
-</div>
+</div> new changes --}}
 
 <script src="/js/player-input.js"></script>
 <script src="/js/roomDungeon.js"></script>

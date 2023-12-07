@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 .no-button {
   background: none;
   border: none;
@@ -27,8 +29,27 @@ input[type="radio"]:checked + img {
 }
 
 body {
+  background-image: url("/images/art/bg.png");
   background-color: purple;
 }
+
+.choice-btn {
+  width: 45%;
+}
+
+.typed-cursor {
+  display: none;
+}
+
+/* #nar,
+#intro-text {
+  font-family: "VT323", monospace;
+} */
+
+/* .inventory {
+  position: relative;
+  right: 63px;
+} */
 
 /* main {
   margin-left: 250px;
@@ -68,7 +89,7 @@ footer {
   justify-content: space-between;
 } */
 
-.room-image {
+/* .room-image {
   width: 500px;
   display: flex;
 }
@@ -98,4 +119,4 @@ footer {
 .player-choices-form {
   display: flex;
   justify-content: space-evenly;
-}
+} */
