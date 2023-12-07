@@ -9,64 +9,72 @@ let neutral = 1;
 let desk = 2;
 let door = 3;
 let shelve = 4;
+let haskey = false;
 let isOpen = false;
-let hasDefeat = false;
-
+let hasRead = false;
+let hasScroll = false;
+let haskey2 = false;
+let hasdrank = false;
 
 //giving items and changeing choice
 
 const choice1 = async (event) => {
+  event.preventDefault();
   if (position == neutral) {
-
     //losading table
-    ChText1.textContent = "Take the hammer.";
+    ChText1.textContent = "Drink potion.";
     ChText2.classList.add("d-none");
     ChText3.classList.add("d-none");
     ChText4.classList.remove("d-none");
     ChText4.textContent = "Return to main spot.";
-    nar.textContent =
-      "You walk up to the wooden table and see weird symbols on it. There is some paper sheets spread all over the table";
+    nar.textContent = `You walk up to the wooden table and see weird symbols on it. There is some paper sheets spread all over the table. You see muliple potions on the table. One of them reads "Gain special key by drinking potion". Will you drink it?`;
     position = desk;
   }
   //choice 1 of table
   if (position == desk) {
-    //give hammer
-    const response = await fetch("/api/users/login", {
-      method: "POST",
-      body: JSON.stringify({ username, password }),
-      headers: { "Content-Type": "application/json" },
-    });
-    hashammer = true;
+    if (hasdrank) {
+      nar.textContent =
+        "You drink the potion. As soon as you get done with drinking the potion you start to feel sick. You end up vomiting up the special key.";
+      ChText1.textContent = "Grab the key.";
+
+      if (haskey2) {
+        nar.textContent = "You grabbed the key.";
+      }
+      haskey2 = true;
+    }
+    hasdrank = true;
   }
   //choice 1 of door
   if (position == door) {
-    if (!haskey) {
+    if (!hasScroll) {
       nar.textContent = "The door is locked.";
     }
-    if (haskey) {
-      document.location.replace("/");
+    if (!haskey2 && !haskey) {
+      nar.textContent =
+        "The door is unlocked, but somewhere in your mind a voice tells you have missed something or multiple things.";
+    }
+    if (haskey && haskey2 && hasScroll) {
+      document.location.replace("/game/escape");
     }
   }
   //choice 1 of chest
   if (position == shelve) {
-    if ((hashammer = false && !isOpen)) {
-      nar.textContent = "The chest is locked.";
-    }
-    if (hashammer && !isOpen) {
+    if (hasRead) {
       nar.textContent =
-        "You grasp the hammer tightly and repeatedly smash the chain around the chest, until it yields. Succumbing to the relentless assault. It falls away clattering on the stone floor. Upon opening the chest it contains a mess of written pages and scrawled notes.";
+        "You start to read the text on the page as you read a special key starts to form the page. As soon has you finish reading the page the key is shines.";
+      ChText1.textContent = "Take the key.";
+      ChText1.classList.remove("d-none");
+      if (haskey && hasRead) {
+        nar.textContent = "You grabed the special key.";
+      }
+      haskey = true;
     }
-    if (isOpen == true) {
-      nar.textContent = `Skimming through the lines on the various pages, you are unable to find anything of value.
-However, a single torn sheet of parchment catches your eye. It reads: "He who wishes to be free must find the magic keys three".`;
-      ChText1.textContent = "Grab the key";
-      ChText2.classList.remove("d-none");
-      readPaper = true;
-    }
+    hasRead = true;
   }
 };
 
 const choice2 = async (event) => {
+  event.preventDefault();
   //loading doorway
   if (position == neutral) {
     ChText1.textContent = "Open the door.";
@@ -82,35 +90,30 @@ const choice2 = async (event) => {
   if (position == door) {
   }
   if (position == shelve) {
-    if (isOpen == true && readPaper) {
-      //give key
-      const response = await fetch("/api/users/login", {
-        method: "POST",
-        body: JSON.stringify({ username, password }),
-        headers: { "Content-Type": "application/json" },
-      });
-      haskey = true;
-    }
+    nar.textContent = "You grabbed the scroll.";
+    hasScroll = true;
   }
 };
 
 const choice3 = async (event) => {
+  event.preventDefault();
   //loading shelves
   if (position == neutral) {
     nar.textContent =
-        "You walk up to the shelves and see a large assortment of potions and herbs on the shelves. You see a book that is already open.";
-
+      "You walk up to the shelves and see a large assortment of potions and herbs on the shelves. You see a book that is already open. You see a scroll sticking out of one of the other pages.";
     ChText1.textContent = "Read the page that the book is open to.";
     ChText1.classList.remove("d-none");
-    ChText2.classList.add("d-none");
+    ChText2.textContent = "Take the scroll out of book.";
+    ChText2.classList.remove("d-none");
     ChText3.classList.add("d-none");
     ChText4.classList.remove("d-none");
     ChText4.textContent = "Return to main spot.";
-    position = chest;
+    position = shelve;
   }
 };
 
 const choice4 = async (event) => {
+  event.preventDefault();
   //loading neutral
   if (position == desk) {
     ChText1.textContent = "Go to the table";
@@ -120,8 +123,15 @@ const choice4 = async (event) => {
     ChText3.textContent = "Go to the chest";
     ChText3.classList.remove("d-none");
     ChText4.classList.add("d-none");
-    nar.textContent =
-      " There is a wooden table in front of you and is a couple feet away from you. You look to your right to see a chest that has a lock on it. You look to your left to see a door that could be an exit.";
+    nar.textContent = ` One side contains bookshelves all the wayt to the ceiling, filled with
+    different books of all shapes and sizes. Immediately in front of the shelves
+    are two small wooden tables whose surfaces are covered in open tomes. Across
+    from small library you see a large table with shelves hanging above it. Upon
+    the weathered wooden surface of the table, an array of flasks, an alembic,
+    and a mortar and pestle catch the ambient light. Showcasing an assortment of
+    colorful liquids. On the shelves above is a rainbow of more vibrant potion
+    vials. Each container meticulously labeled with arcane symbols and cryptic
+    runes. You stand in between these two sections....`;
     position = neutral;
   }
   if (position == door) {
@@ -132,8 +142,15 @@ const choice4 = async (event) => {
     ChText3.textContent = "Go to the chest";
     ChText3.classList.remove("d-none");
     ChText4.classList.add("d-none");
-    nar.textContent =
-      " There is a wooden table in front of you and is a couple feet away from you. You look to your right to see a chest that has a lock on it. You look to your left to see a door that could be an exit.";
+    nar.textContent = ` One side contains bookshelves all the wayt to the ceiling, filled with
+    different books of all shapes and sizes. Immediately in front of the shelves
+    are two small wooden tables whose surfaces are covered in open tomes. Across
+    from small library you see a large table with shelves hanging above it. Upon
+    the weathered wooden surface of the table, an array of flasks, an alembic,
+    and a mortar and pestle catch the ambient light. Showcasing an assortment of
+    colorful liquids. On the shelves above is a rainbow of more vibrant potion
+    vials. Each container meticulously labeled with arcane symbols and cryptic
+    runes. You stand in between these two sections....`;
     position = neutral;
   }
   if (position == shelve) {
@@ -144,8 +161,15 @@ const choice4 = async (event) => {
     ChText3.textContent = "Go to the chest";
     ChText3.classList.remove("d-none");
     ChText4.classList.add("d-none");
-    nar.textContent =
-      " There is a wooden table in front of you and is a couple feet away from you. You look to your right to see a chest that has a lock on it. You look to your left to see a door that could be an exit.";
+    nar.textContent = ` One side contains bookshelves all the wayt to the ceiling, filled with
+    different books of all shapes and sizes. Immediately in front of the shelves
+    are two small wooden tables whose surfaces are covered in open tomes. Across
+    from small library you see a large table with shelves hanging above it. Upon
+    the weathered wooden surface of the table, an array of flasks, an alembic,
+    and a mortar and pestle catch the ambient light. Showcasing an assortment of
+    colorful liquids. On the shelves above is a rainbow of more vibrant potion
+    vials. Each container meticulously labeled with arcane symbols and cryptic
+    runes. You stand in between these two sections....`;
     position = neutral;
   }
 };
