@@ -5,9 +5,9 @@ const intro = new Typed("#intro-text", {
   typeSpeed: 50,
 });
 
-const start = new Typed("#nar", {
-  strings: [
-    "You wake up in a dark room shackled to the wall. As you begin to look around your shackles vanish from your wrist. As your eyes begin to adjust to the dark room you stand up and realize you are in some kind of dungeon with cages and shackles along the opposite wall. There is a wooden table in front of you and is a couple feet away from you. You look to your right to see a chest that has a lock on it. You look to your left to see a door that could be an exit.",
-  ],
-  typeSpeed: 25,
-});
+// const start = new Typed("#nar", {
+//   strings: [
+//     "You wake up in a dark room shackled to the wall. As you begin to look around your shackles vanish from your wrist. As your eyes begin to adjust to the dark room you stand up and realize you are in some kind of dungeon with cages and shackles along the opposite wall. There is a wooden table in front of you and is a couple feet away from you. You look to your right to see a chest that has a lock on it. You look to your left to see a door that could be an exit.",
+//   ],
+//   typeSpeed: 25,
+// });
