@@ -27,7 +27,7 @@ router.get("/game/dungeon", (req, res) => {
   });
 });
 
-router.get("game/library", (req, res) => {
+router.get("/game/library", (req, res) => {
   res.render("library", {
     logged_in: req.session.logged_in,
   });
