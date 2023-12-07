@@ -46,12 +46,32 @@ body {
   height: 80vh;
 }
 
+.history {
+  overflow-y: scroll;
+}
+
 #title {
   font-family: "Creepster", sans-serif;
 }
 
 header {
   background-color: rgb(87, 1, 87);
+}
+
+#inv img {
+  background-color: gray;
+  border: 3px solid darkviolet;
+  margin-bottom: 10px;
+}
+
+.avt {
+  outline: 5px solid purple;
+}
+
+@media only screen and (max-width: 600px) {
+  #game-screen img {
+    width: 300px;
+  }
 }
 
 /* #nar,

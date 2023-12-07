@@ -1,35 +1,8 @@
-{{!-- <div class="room-image">
-  <img src="https://placehold.co/1000x500" alt="" class="room-image" />
-</div>
-
-<div class="game-text">
-  <p id="nar">
-    As you push open the creaking wooden door, you find yourself stepping into a
-    some sort of living room that exudes a rustic charm. The hearth at the
-    center of the room crackles with dancing flames, casting a warm and
-    flickering light across the stone walls. The air is tinged with the
-    comforting scent of burning firewood. The comfort is cut short as you see a
-    large metallic door opposite of you. This door bears 3 large adornments that
-    vertically descend the middle of the door. The top emblem shaped like a
-    book, the middle shaped like a potion vial, and the last ominously shaped as
-    a skull...
-  </p>
-</div>
-
-<div>
-  <form class="player-choices-form">
-    <button id="choice1" class="choice-btn">Go to the table</button>
-    <button id="choice2" class="choice-btn">Go to the door</button>
-    <button id="choice3" class="choice-btn">Go to the chest</button>
-    <button id="choice4" class="d-none choice-btn">Choice</button>
-  </form>
-</div> --}}
-
 <div class="row d-flex justify-content-between">
   <div class="col-md-2 d-none d-sm-block card history">
     <h2 class="text-center">History</h2>
   </div>
-  <div class="col-md-6 d-flex flex-column align-items-center screen">
+  <div id="game-screen" class="col-md-6 d-flex flex-column align-items-center screen">
     <img class="game-screen mb-3" width="700" src="/images/story/final_room3.jpg" />
     <p id="nar" class="card w-100">
     As you push open the creaking wooden door, you find yourself stepping into a
@@ -63,11 +36,11 @@
       </form>
     </div>
   </div>
-  <div class="col-2 d-none d-sm-block text-center card inventory">
-    <h2>{{name}}</h2>
-    <img width="150" height="150" src="/images/avatars/avatar-{{avatar}}.png" />
+  <div class="col-2 d-none d-sm-block text-center card inventory p-2">
+    <img class="avt mb-2" width="150" height="150" src="/images/avatars/avatar-{{player.avatar}}.png" />
+    <h2>{{player.name}}</h2>
     <div class="col">
-      <h2 class="text-center">Inventory</h2>
+      <h3 class="text-center">Inventory</h3>
       <div class="col d-flex flex-wrap justify-content-around">
       </div>
     </div>

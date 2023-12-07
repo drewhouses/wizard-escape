@@ -4,6 +4,9 @@ var ChText3 = document.querySelector("#choice3");
 var ChText4 = document.querySelector("#choice4");
 var nar = document.querySelector("#nar");
 
+const history = document.querySelector("#action-history");
+const inv = document.querySelector("#inv");
+
 let position = 1;
 let neutral = 1;
 let desk = 2;
@@ -20,6 +23,7 @@ let hasdrank = false;
 
 const choice1 = async (event) => {
   event.preventDefault();
+
   if (position == neutral) {
     //losading table
     ChText1.textContent = "Drink potion.";
@@ -28,6 +32,9 @@ const choice1 = async (event) => {
     ChText4.classList.remove("d-none");
     ChText4.textContent = "Return to main spot.";
     nar.textContent = `You walk up to the wooden table and see weird symbols on it. There is some paper sheets spread all over the table. You see muliple potions on the table. One of them reads "Gain special key by drinking potion". Will you drink it?`;
+    let action = document.createElement("p");
+    history.appendChild(action);
+    action.textContent = "Walked to the table."; //add to history
     position = desk;
   }
   //choice 1 of table
@@ -35,10 +42,17 @@ const choice1 = async (event) => {
     if (hasdrank) {
       nar.textContent =
         "You drink the potion. As soon as you get done with drinking the potion you start to feel sick. You end up vomiting up the special key.";
+      let action = document.createElement("p");
+      history.appendChild(action);
+      action.textContent = "Vomited a key out..."; //add to history
       ChText1.textContent = "Grab the key.";
 
       if (haskey2) {
         nar.textContent = "You grabbed the key.";
+        action.textContent = "Grabbed the key!"; //add to history
+        let obtain = document.createElement("img");
+        inv.appendChild(obtain);
+        obtain.setAttribute("src", "/images/items/key.png"); //add inventory
       }
       haskey2 = true;
     }
@@ -48,13 +62,23 @@ const choice1 = async (event) => {
   if (position == door) {
     if (!hasScroll) {
       nar.textContent = "The door is locked.";
+      let action = document.createElement("p");
+      history.appendChild(action);
+      action.textContent = "Tried opening locked door..."; //add to history
     }
     if (!haskey2 && !haskey) {
       nar.textContent =
         "The door is unlocked, but somewhere in your mind a voice tells you have missed something or multiple things.";
+      let action = document.createElement("p");
+      history.appendChild(action);
+      action.textContent = "There's something that needs to be done still..."; //add to history
     }
     if (haskey && haskey2 && hasScroll) {
-      document.location.replace("/game/escape");
+      const currentLocation = window.location.href;
+      const url = new URL(currentLocation);
+      const id = url.searchParams.get("id") || url.pathname.split("/").pop(); //remove this block if not work
+
+      document.location.replace(`/game/escape/${id}`); //remove id and change route back to original
     }
   }
   //choice 1 of chest
@@ -62,10 +86,19 @@ const choice1 = async (event) => {
     if (hasRead) {
       nar.textContent =
         "You start to read the text on the page as you read a special key starts to form the page. As soon has you finish reading the page the key is shines.";
+      let action = document.createElement("p");
+      history.appendChild(action);
+      action.textContent = "A key appeared!"; //add to history
       ChText1.textContent = "Take the key.";
       ChText1.classList.remove("d-none");
       if (haskey && hasRead) {
-        nar.textContent = "You grabed the special key.";
+        nar.textContent = "You grabbed the special key.";
+        let action = document.createElement("p");
+        history.appendChild(action);
+        action.textContent = "Grabbed the key!."; //add to history
+        let obtain = document.createElement("img");
+        inv.appendChild(obtain);
+        obtain.setAttribute("src", "/images/items/key.png"); //add inventory
       }
       haskey = true;
     }
@@ -75,6 +108,7 @@ const choice1 = async (event) => {
 
 const choice2 = async (event) => {
   event.preventDefault();
+
   //loading doorway
   if (position == neutral) {
     ChText1.textContent = "Open the door.";
@@ -83,6 +117,9 @@ const choice2 = async (event) => {
     ChText4.classList.remove("d-none");
     ChText4.textContent = "Return to main spot.";
     nar.textContent = "You walk over to the door. It has a keyhole.";
+    let action = document.createElement("p");
+    history.appendChild(action);
+    action.textContent = "Walked to the door."; //add to history
     position = door;
   }
   if (position == desk) {
@@ -91,16 +128,26 @@ const choice2 = async (event) => {
   }
   if (position == shelve) {
     nar.textContent = "You grabbed the scroll.";
+    let action = document.createElement("p");
+    history.appendChild(action);
+    action.textContent = "Grabbed the scroll!"; //add to history
+    let obtain = document.createElement("img");
+    inv.appendChild(obtain);
+    obtain.setAttribute("src", "/images/items/scroll.png"); //add inventory
     hasScroll = true;
   }
 };
 
 const choice3 = async (event) => {
   event.preventDefault();
+
   //loading shelves
   if (position == neutral) {
     nar.textContent =
       "You walk up to the shelves and see a large assortment of potions and herbs on the shelves. You see a book that is already open. You see a scroll sticking out of one of the other pages.";
+    let action = document.createElement("p");
+    history.appendChild(action);
+    action.textContent = "Walked to the shelves."; //add to history
     ChText1.textContent = "Read the page that the book is open to.";
     ChText1.classList.remove("d-none");
     ChText2.textContent = "Take the scroll out of book.";
@@ -114,6 +161,7 @@ const choice3 = async (event) => {
 
 const choice4 = async (event) => {
   event.preventDefault();
+
   //loading neutral
   if (position == desk) {
     ChText1.textContent = "Go to the table";

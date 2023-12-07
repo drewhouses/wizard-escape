@@ -10,7 +10,7 @@ let isOpen = false;
 const choice1 = async (event) => {
   event.preventDefault();
   if (position == neutral) {
-    //losading table
+    //loading table
     ChText1.textContent = "Go to the door.";
 
     ChText4.textContent = "Return to main spot.";
@@ -19,7 +19,11 @@ const choice1 = async (event) => {
 
   //choice 1 of door
   if (position == door) {
-    document.location.replace("/game/ending");
+    const currentLocation = window.location.href;
+    const url = new URL(currentLocation);
+    const id = url.searchParams.get("id") || url.pathname.split("/").pop(); //remove this block if not work
+
+    document.location.replace(`/game/ending/${id}`); //remove id also dont forget to change routes :PP if not work lol
   }
 };
 

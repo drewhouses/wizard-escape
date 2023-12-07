@@ -15,8 +15,18 @@ const createCharacterHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
+    // if (response.ok) {
+    //   document.location.replace("/game");
+    //   console.log("Character created");
+    // } else {
+    //     alert(response.statusText);
+    //     console.log(response);
+    // }
+
     if (response.ok) {
-      document.location.replace("/game");
+      const resData = await response.json();
+      const playerId = resData.id;
+      document.location.replace(`/game/${playerId}`);
       console.log("Character created");
     } else {
       alert(response.statusText);
