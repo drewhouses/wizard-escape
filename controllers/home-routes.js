@@ -27,4 +27,16 @@ router.get("/game/dungeon", (req, res) => {
   });
 });
 
+router.get("game/library", (req, res) => {
+  res.render("library", {
+    logged_in: req.session.logged_in,
+  });
+});
+
+router.get("/game/escape", (req, res) => {
+  res.render("escape-room", {
+    logged_in: req.session.logged_in,
+  });
+});
+
 module.exports = router;
