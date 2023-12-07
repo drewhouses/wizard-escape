@@ -4,14 +4,14 @@ Survival Escape Game, escape the dark wizard's tower before time or your luck ru
 
 ## Description
 
-We wanted to showcase our Wizard Escape is a escape room web game.
+Wizard Escape is a escape room web game.
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+We wanted to showcase our our skils and understanding for web development practices and topics, such as:
+ - MVC paradigm
+ - Web App with MySQL bakcend
+ - ExpressJS
+ - SequelizeJS
+ - DOM Manipulation
 
 ## Table of Contents (Optional)
 
