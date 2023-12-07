@@ -1,6 +1,3 @@
-//const { inventory } = require("./inventory.js");
-//import inventory from "./inventory.js";
-
 var ChText1 = document.querySelector("#choice1");
 var ChText2 = document.querySelector("#choice2");
 var ChText3 = document.querySelector("#choice3");
@@ -11,17 +8,16 @@ let position = 1;
 let neutral = 1;
 let desk = 2;
 let door = 3;
-let chest = 4;
+let shelve = 4;
 let isOpen = false;
-let haskey = false;
-let hashammer = false;
-let readPaper = false;
+let hasDefeat = false;
+
 
 //giving items and changeing choice
 
 const choice1 = async (event) => {
-  event.preventDefault();
   if (position == neutral) {
+
     //losading table
     ChText1.textContent = "Take the hammer.";
     ChText2.classList.add("d-none");
@@ -29,13 +25,17 @@ const choice1 = async (event) => {
     ChText4.classList.remove("d-none");
     ChText4.textContent = "Return to main spot.";
     nar.textContent =
-      "You walk up to the wooden table and see an arrangement of objects on the wooden table. To the left you see a couple of bones and a jar with orange liquid in it. To the right you see some tools; many are unrecognizable and weirdly shaped. You are able to make out a knife. In the middle of the table you see a glass ball and a piece of paper with something written on it.";
+      "You walk up to the wooden table and see weird symbols on it. There is some paper sheets spread all over the table";
     position = desk;
   }
   //choice 1 of table
   if (position == desk) {
     //give hammer
-
+    const response = await fetch("/api/users/login", {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+      headers: { "Content-Type": "application/json" },
+    });
     hashammer = true;
   }
   //choice 1 of door
@@ -48,7 +48,7 @@ const choice1 = async (event) => {
     }
   }
   //choice 1 of chest
-  if (position == chest) {
+  if (position == shelve) {
     if ((hashammer = false && !isOpen)) {
       nar.textContent = "The chest is locked.";
     }
@@ -67,8 +67,7 @@ However, a single torn sheet of parchment catches your eye. It reads: "He who wi
 };
 
 const choice2 = async (event) => {
-  event.preventDefault();
-  //loading door
+  //loading doorway
   if (position == neutral) {
     ChText1.textContent = "Open the door.";
     ChText2.classList.add("d-none");
@@ -82,32 +81,27 @@ const choice2 = async (event) => {
   }
   if (position == door) {
   }
-  if (position == chest) {
+  if (position == shelve) {
     if (isOpen == true && readPaper) {
       //give key
+      const response = await fetch("/api/users/login", {
+        method: "POST",
+        body: JSON.stringify({ username, password }),
+        headers: { "Content-Type": "application/json" },
+      });
       haskey = true;
     }
   }
 };
 
 const choice3 = async (event) => {
-  //loading chest
-  event.preventDefault();
+  //loading shelves
   if (position == neutral) {
-    if ((hashammer = false && !isOpen)) {
-      ChText1.textContent = "Open chest";
-      ChText1.classList.remove("d-none");
-      nar.textContent =
-        "You walk up to the chest which looks old and rusted. It is chained shut with a small lock on it.";
-    }
-    if (hashammer && !isOpen) {
-      ChText1.textContent = "Open chest with the hammer";
-      ChText1.classList.remove("d-none");
-    }
-    if (isOpen == true) {
-      ChText1.textContent = "Look through stack of papers";
-      ChText1.classList.remove("d-none");
-    }
+    nar.textContent =
+        "You walk up to the shelves and see a large assortment of potions and herbs on the shelves. You see a book that is already open.";
+
+    ChText1.textContent = "Read the page that the book is open to.";
+    ChText1.classList.remove("d-none");
     ChText2.classList.add("d-none");
     ChText3.classList.add("d-none");
     ChText4.classList.remove("d-none");
@@ -117,7 +111,6 @@ const choice3 = async (event) => {
 };
 
 const choice4 = async (event) => {
-  event.preventDefault();
   //loading neutral
   if (position == desk) {
     ChText1.textContent = "Go to the table";
@@ -143,7 +136,7 @@ const choice4 = async (event) => {
       " There is a wooden table in front of you and is a couple feet away from you. You look to your right to see a chest that has a lock on it. You look to your left to see a door that could be an exit.";
     position = neutral;
   }
-  if (position == chest) {
+  if (position == shelve) {
     ChText1.textContent = "Go to the table";
     ChText1.classList.remove("d-none");
     ChText2.textContent = "Go to the door";
