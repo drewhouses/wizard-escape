@@ -120,7 +120,7 @@ const choice4 = async (event) => {
     ChText1.classList.remove("d-none");
     ChText2.textContent = "Go to the door";
     ChText2.classList.remove("d-none");
-    ChText3.textContent = "Go to the chest";
+    ChText3.textContent = "Go to the shelf";
     ChText3.classList.remove("d-none");
     ChText4.classList.add("d-none");
     nar.textContent = ` One side contains bookshelves all the wayt to the ceiling, filled with
@@ -139,7 +139,7 @@ const choice4 = async (event) => {
     ChText1.classList.remove("d-none");
     ChText2.textContent = "Go to the door";
     ChText2.classList.remove("d-none");
-    ChText3.textContent = "Go to the chest";
+    ChText3.textContent = "Go to the shelf";
     ChText3.classList.remove("d-none");
     ChText4.classList.add("d-none");
     nar.textContent = ` One side contains bookshelves all the wayt to the ceiling, filled with
@@ -158,7 +158,7 @@ const choice4 = async (event) => {
     ChText1.classList.remove("d-none");
     ChText2.textContent = "Go to the door";
     ChText2.classList.remove("d-none");
-    ChText3.textContent = "Go to the chest";
+    ChText3.textContent = "Go to the shelf";
     ChText3.classList.remove("d-none");
     ChText4.classList.add("d-none");
     nar.textContent = ` One side contains bookshelves all the wayt to the ceiling, filled with

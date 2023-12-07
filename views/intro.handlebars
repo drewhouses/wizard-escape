@@ -1,5 +1,10 @@
-<div class="room-image">
-  <img src="/images/story/intro_dark_forest.jpg" alt="" class="room-image" />
+{{!-- <div class="room-image">
+  <img
+    width="1000"
+    src="/images/story/intro_dark_forest.jpg"
+    alt=""
+    class="room-image"
+  />
 </div>
 
 <div class="game-text card p-1">
@@ -8,6 +13,34 @@
 
 <div>
   <button class="start-btn btn btn-success">Click to Start</button>
-</div>
+</div> --}}
+
+<div class="row d-flex justify-content-between">
+  <div class="col-md-2 d-none d-sm-block card history">
+    <h2 class="text-center">History</h2>
+  </div>
+  <div class="col-md-6 d-flex flex-column align-items-center screen">
+  <img
+    width="700"
+    src="/images/story/intro_dark_forest.jpg"
+    alt=""
+    class="room-image mb-3"
+  />
+    <p id="intro-text" class="card w-100"></p>
+    <div class="col-12 text-center">
+      <button class="start-btn btn btn-danger">START</button>
+    </div>
+  </div>
+  <div class="col-2 d-none d-sm-block text-center card inventory">
+    <h2>{{name}}</h2>
+    <img width="150" height="150" src="/images/avatars/avatar-{{avatar}}.png" />
+    <div class="col">
+      <h2 class="text-center">Inventory</h2>
+      <div class="col d-flex flex-wrap justify-content-around">
+      </div>
+    </div>
+  </div>
 
 <script src="/js/intro.js"></script>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="/js/typewriter.js"></script>
