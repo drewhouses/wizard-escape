@@ -8,11 +8,11 @@ let door = 2;
 let isOpen = false;
 
 const choice1 = async (event) => {
+  event.preventDefault();
   if (position == neutral) {
     //losading table
     ChText1.textContent = "Go to the door.";
-    ChText2.classList.add("d-none");
-    ChText3.classList.add("d-none");
+
     ChText4.textContent = "Return to main spot.";
     position = door;
   }
@@ -24,6 +24,7 @@ const choice1 = async (event) => {
 };
 
 const choice4 = async (event) => {
+  event.preventDefault();
   //loading neutral
   if (position == door) {
     ChText1.textContent = "Go to the table";
