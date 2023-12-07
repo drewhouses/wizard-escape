@@ -1,4 +1,4 @@
-<div class="room-image">
+{{!-- <div class="room-image">
   <img src="https://placehold.co/1000x500" alt="" class="room-image" />
 </div>
 
@@ -23,6 +23,90 @@
     <button id="choice3" class="choice-btn">Go to the chest</button>
     <button id="choice4" class="d-none choice-btn">Choice</button>
   </form>
-</div>
+</div> --}}
+
+<div class="row d-flex justify-content-between">
+  <div class="col-md-2 card history">
+    <h2 class="text-center d-none d-sm-block">History</h2>
+  </div>
+  <div class="col-md-6 d-flex flex-column align-items-center screen">
+    <img class="game-screen mb-3" src="https://placeholder.co/700x500" />
+    <p id="nar" class="card w-100">
+    As you push open the creaking wooden door, you find yourself stepping into a
+    some sort of living room that exudes a rustic charm. The hearth at the
+    center of the room crackles with dancing flames, casting a warm and
+    flickering light across the stone walls. The air is tinged with the
+    comforting scent of burning firewood. The comfort is cut short as you see a
+    large metallic door opposite of you. This door bears 3 large adornments that
+    vertically descend the middle of the door. The top emblem shaped like a
+    book, the middle shaped like a potion vial, and the last ominously shaped as
+    a skull...
+    </p>
+    <div class="col-12">
+      <form class="player-choices-form text-center">
+        <button
+          class="btn btn-success choice-btn mb-1"
+          id="choice1"
+        >Go to the table.</button>
+        <button
+          class="btn btn-success choice-btn mb-1"
+          id="choice2"
+        >Go to the door.</button>
+        <button
+          class="btn btn-success choice-btn mb-1"
+          id="choice3"
+        >Go to the chest.</button>
+        <button
+          class="btn btn-success choice-btn mb-1"
+          id="choice4"
+        >Choice</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-2 d-none d-sm-block text-center card inventory">
+    <h2>{{name}}</h2>
+    <img width="150" height="150" src="/images/avatars/avatar-{{avatar}}.png" />
+    <div class="col">
+      <h2 class="text-center">Inventory</h2>
+      <div class="col d-flex flex-wrap justify-content-around">
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+        <img
+          class="m-1"
+          width="75"
+          height="75"
+          src="https://placeholder.co/75"
+        />
+      </div>
+    </div>
+  </div>
 
 <script src="/js/roomEnd.js"></script>

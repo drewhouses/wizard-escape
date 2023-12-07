@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 .no-button {
   background: none;
   border: none;
@@ -27,6 +29,7 @@ input[type="radio"]:checked + img {
 }
 
 body {
+  background-image: url("/images/art/bg.png");
   background-color: purple;
 }
 
@@ -37,6 +40,11 @@ body {
 .typed-cursor {
   display: none;
 }
+
+/* #nar,
+#intro-text {
+  font-family: "VT323", monospace;
+} */
 
 /* .inventory {
   position: relative;
