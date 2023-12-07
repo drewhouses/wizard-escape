@@ -7,11 +7,12 @@ Survival Escape Game, escape the dark wizard's tower before time or your luck ru
 Wizard Escape is a escape room web game.
 
 We wanted to showcase our our skils and understanding for web development practices and topics, such as:
- - MVC paradigm
- - Web App with MySQL bakcend
- - ExpressJS
- - SequelizeJS
- - DOM Manipulation
+
+- MVC paradigm
+- Web App with MySQL bakcend
+- ExpressJS
+- SequelizeJS
+- DOM Manipulation
 
 ## Table of Contents (Optional)
 
@@ -44,11 +45,13 @@ Heroku
 
 typed.js (https://github.com/mattboldt/typed.js)
 
+ChatGPT 3.5 to aid with story narration
+
 ## License
 
 MIT License
 
-Copyright (c) [2023] [Crew Casas, Luis Olmos, Evan Rice]
+Copyright (c) [2023] [Drew Casas, Luis Olmos, Evan Rice]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
