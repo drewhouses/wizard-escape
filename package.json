@@ -9,7 +9,7 @@
     "init_db": "mysql -u root -p"
   },
   "author": "Evan Rice, Luis Olmos, Drew Casas",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "connect-session-sequelize": "^7.1.7",
