@@ -94,11 +94,6 @@ footer {
   display: flex;
 }
 
-.room-image img {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 #start-container {
   display: block;
   width: 70vw;
