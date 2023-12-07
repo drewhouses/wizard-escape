@@ -91,7 +91,7 @@ const choice2 = async (event) => {
   if (position == chest) {
     //give key
     haskey = true;
-    nar.textContent = "You grabed the key.";
+    nar.textContent = "You grabbed the key.";
   }
 };
 
