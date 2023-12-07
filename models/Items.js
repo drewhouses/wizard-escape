@@ -15,15 +15,6 @@ Items.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
-    },
-    is_consumable: {
-      // is_consumable will determine whether the item gets destroyed upon use
-      // default value is true since most items will be 1 time use
-      type: DataTypes.BOOLEAN,
-      defaultValue: true,
-    },
   },
   {
     sequelize,
