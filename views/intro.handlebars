@@ -1,25 +1,8 @@
-{{!-- <div class="room-image">
-  <img
-    width="1000"
-    src="/images/story/intro_dark_forest.jpg"
-    alt=""
-    class="room-image"
-  />
-</div>
-
-<div class="game-text card p-1">
-  <p id="intro-text"></p>
-</div>
-
-<div>
-  <button class="start-btn btn btn-success">Click to Start</button>
-</div> --}}
-
 <div class="row d-flex justify-content-between">
   <div class="col-md-2 d-none d-sm-block card history">
     <h2 class="text-center">History</h2>
   </div>
-  <div class="col-md-6 d-flex flex-column align-items-center screen">
+  <div id="game-screen" class="col-md-6 d-flex flex-column align-items-center screen">
   <img
     width="700"
     src="/images/story/intro_dark_forest.jpg"
@@ -31,11 +14,11 @@
       <button class="start-btn btn btn-danger">START</button>
     </div>
   </div>
-  <div class="col-2 d-none d-sm-block text-center card inventory">
-    <h2>{{name}}</h2>
-    <img width="150" height="150" src="/images/avatars/avatar-{{avatar}}.png" />
+  <div class="col-2 d-none d-sm-block text-center card inventory p-2">
+    <img class="avt mb-2" width="150" height="150" src="/images/avatars/avatar-{{player.avatar}}.png" />
+    <h2>{{player.name}}</h2>
     <div class="col">
-      <h2 class="text-center">Inventory</h2>
+      <h3 class="text-center">Inventory</h3>
       <div class="col d-flex flex-wrap justify-content-around">
       </div>
     </div>

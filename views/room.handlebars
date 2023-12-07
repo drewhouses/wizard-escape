@@ -1,8 +1,10 @@
 <div class="row d-flex justify-content-between">
   <div class="col-md-2 d-none d-sm-block card history">
     <h2 class="text-center">History</h2>
+    <div id="action-history" class="col">
+    </div>
   </div>
-  <div class="col-md-6 d-flex flex-column align-items-center screen">
+  <div id="game-screen" class="col-md-6 d-flex flex-column align-items-center screen">
     <img class="game-screen mb-3" width="700" src="/images/story/dungeon_cell.jpg" />
     <p id="nar" class="card w-100">
       You wake up in a dark room shackled to the wall. As you begin to look around your shackles vanish from your wrist. As
@@ -31,41 +33,15 @@
       </form>
     </div>
   </div>
-  <div class="col-2 d-none d-sm-block text-center card inventory">
-    <h2>{{name}}</h2>
-    <img width="150" height="150" src="/images/avatars/avatar-{{avatar}}.png" />
+  <div class="col-2 d-none d-sm-block text-center card inventory p-2">
+    <img class="avt mb-2" width="150" height="150" src="/images/avatars/avatar-{{player.avatar}}.png" />
+    <h2>{{player.name}}</h2>
     <div class="col">
-      <h2 class="text-center">Inventory</h2>
-      <div class="col d-flex flex-wrap justify-content-around">
+      <h3 class="text-center">Inventory</h3>
+      <div id="inv" class="col d-flex flex-wrap justify-content-around">
       </div>
     </div>
   </div>
-{{!-- <div class="room-image">
-  <img src="https://placehold.co/1000x500" alt="" class="room-image" />
-</div>
-
-<div class="game-text">
-  <p id="nar">You wake up in a dark room shackled to the wall. As you begin to look around your shackles vanish from your wrist. As
-  your eyes begin to adjust to the dark room you stand up and realize you are in some kind of dungeon with cages and
-  shackles along the opposite wall. There is a wooden table in front of you and is a couple feet away from you. You look
-  to your right to see a chest that has a lock on it. You look to your left to see a door that could be an exit.</p>
-</div>
-
-<div>
-  <form class="player-choices-form">
-    <button id="choice1" class="choice-btn">Go to the table</button>
-    <button id="choice2" class="choice-btn">Go to the door</button>
-    <button id="choice3" class="choice-btn">Go to the chest</button>
-    <button id="choice4" class="d-none choice-btn">Choice</button>
-  </form>
-</div> new changes --}}
 
 <script src="/js/player-input.js"></script>
 <script src="/js/roomDungeon.js"></script>
-
-        {{!-- <img
-          class="m-1"
-          width="75"
-          height="75"
-          src="https://placeholder.co/75"
-        /> --}}
